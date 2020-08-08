@@ -404,4 +404,3 @@ public class Person {
   如果一个`class`是某个`interface`的`implementation`，那`implements`关键字必须出现在class之后
 
 ### 11. Generics
-
