@@ -132,15 +132,17 @@ stand-alone的applection必须要有main方法
 */
 ~~~
 
-### 3. Reference Equality  and  Logical Equality
+### 3. `==`  and  .equals()
 
-“==”对于objects和primitives的作用效果是不同的
-
-“==” 用来比较reference equality —— 即**引用/指针相等**
-
-“.equals()” 用来比较logical equality —— 即**逻辑是否相等**
-
-> Logical Equality —— Two statements are logically equivalent if they have the same truth values for every possible interpretation
+> 定义
+>
+> - `==` is a reference comparison, i.e. both objects point to the same memory location
+>
+>   == 是对内存地址进行比较，如果两个object指向同一个内存地址，则两者相等
+>
+> - `.equals()` evaluates to the comparison of values in the objects
+>
+>   .equals() 比较的是objects中的values
 
 ~~~java
 String a = new String("Wow");
@@ -151,6 +153,58 @@ boolean r1 = a == b;      // This is false, since a and b are not the same objec
 boolean r2 = a.equals(b); // This is true, since a and b are logically equals
 boolean r3 = a == sameA;  // This is true, since a and sameA are really the same object
 ~~~
+
+```java
+class Test{
+    String text;
+    Test(String test){
+        this.text = test;
+    }
+}
+
+public class Equal2 {
+    public static void main(String[] args) {
+        Test a = new Test("apple");
+        Test a1 = new Test("apple");
+        Test b = new Test("peach");
+
+        System.out.println(a.text); //apple
+        System.out.println(a1.text); //apple
+        System.out.println(b.text); //peach
+
+        System.out.println( a.text == a1.text ); // true
+        System.out.println( a.text == b.text ); // false
+        System.out.println( a1.text == b.text ); // false
+    }
+}
+```
+
+```java
+class Test{
+    static String text;
+    Test(String test){
+        this.text = test;
+    }
+}
+
+public class Equal2 {
+    public static void main(String[] args) {
+        Test a = new Test("apple");
+        Test a1 = new Test("apple");
+        Test b = new Test("peach");
+
+        System.out.println(a.text); //peach
+        System.out.println(a1.text); //peach
+        System.out.println(b.text); //peach
+
+        System.out.println( a.text == a1.text ); // true
+        System.out.println( a.text == b.text ); // true
+        System.out.println( a1.text == b.text ); // true
+    }
+}
+```
+
+
 
 ### 4. Array
 
@@ -404,3 +458,71 @@ public class Person {
   如果一个`class`是某个`interface`的`implementation`，那`implements`关键字必须出现在class之后
 
 ### 11. Generics
+
+
+
+### 12. 方法重载 method overload
+
+### 13. Java的内存划分
+
+1. 栈Stack：存放的都是方法中的局部变量
+2. 堆Heap：存放new出来的东西
+3. 方法区Method Area：存放.class的信息，包含方法的信息
+4. 本地方法栈Native Method Stack：与操作系统相关
+5. 寄存器pc Register：与CPU相关
+
+### 14. Collection
+
+**集合是Java中提供的一种容器，可以用来储存多个数据。**
+
+1. 数组的长度是固定的，集合的长度是可变的
+2. 数组中储存的是同一类型的元素，可以储存基本数据类型值。集合储存的是对象，且对象的类型可以不一致
+
+### 15. 包装类
+
+**包装类的基本概念**
+
+`Primitive`即基本数据类型，使用方便，但是没有对应的方法来操作这些类
+
+用来包装`Primitive`的`class`称为包装类，在包装类中可以定义一些方法，用来操作基本数据的类型
+
+八种`Primitive`都有自己对应的包装类，所有的包装类位于`java.lang`包中
+
+**装箱与拆箱**
+
+装箱：将`Primitive`包装为包装类
+
+拆箱：将包装类转换为`Primitive`
+
+~~~java
+// 装箱
+Integer in = Integer.valueOf("1");
+Integer in = Integer.valueOf(1);
+// 拆箱
+int i = in.intValue();
+~~~
+
+自动装箱与自动拆箱：`Primitive`和`Box Class`之间可以自动的相互转换
+
+```Java
+// 自动装箱
+// 相当于Integer in = Integer.valueOf(1);
+// 相当于Integet in = new Integet(1);
+Integet in = 1;
+
+// 自动拆箱
+// 理论上包装类是无法进行运算的
+// 此处in自动执行in.intValue()，然后参与运算，然后in再自动装箱为Integer.valueOf(3)
+in = in + 2;
+```
+
+
+
+
+
+
+
+
+
+
+
