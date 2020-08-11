@@ -9,7 +9,6 @@ abstract class Race{
     // 种族技能
     abstract void useRaceSkill();
 }
-
 // 种族 —— 亡灵
 class RaceUndead extends Race{
 
@@ -51,52 +50,6 @@ class RaceHuman extends Race{
     }
 }
 
-// 角色
-class Player{
-
-    Race race;
-    Profession profession;
-    String name;
-    Player( String name, int raceCode, int professionCode ){
-        this.name = name;
-        this.race = this.creatRace( raceCode );
-    }
-
-    private Race creatRace( int raceCode ){
-        if(raceCode == 0){
-            return new RaceHuman();
-        } else{
-            return new RaceUndead();
-        }
-
-    }
-
-}
-
-// 种族
-class Undead{
-    String name;
-    int typeNum;
-    Profession profession;
-    static String skill;
-
-    static {
-        skill = "determination";
-        System.out.println("Undead has init");
-    }
-
-    Undead( String name, int typeNum ){
-        this.name = name;
-        this.typeNum = typeNum;
-        this.profession = new Magic(this.name, this.typeNum);
-    }
-
-    public void death(){
-        System.out.println("Undead dead!");
-    }
-
-}
-
 // 职业abstract
 abstract class Profession{
     String proName;
@@ -106,8 +59,7 @@ abstract class Profession{
     public abstract void getHorse();
     public abstract void useSkill();
 }
-
-//
+// 职业 —— 法师
 class Magic extends Profession{
 
     Object specialization;
@@ -145,25 +97,106 @@ class Magic extends Profession{
             this.iniSkill = "Fire Ball!";
             return "Fire";
         }
-        else if( typeNum == 2){
+        else{
             this.iniSkill = "Arcane Missile!";
             return "Arcane";
-        }else{
-            return 666;
+        }
+
+    }
+
+}
+// 职业 —— 战士
+class Warrior extends Profession{
+
+    private Object specialization;
+    private String iniSkill;
+    private static String horseName;
+
+    static {
+        horseName = "horse";
+    }
+
+    Warrior(String name, int typeNum){
+
+        super( name );
+        this.specialization = this.iniSpecialization( typeNum );
+    }
+
+    // abstract getHorse实现
+    public void getHorse(){
+        System.out.println(super.proName + " ride horse " + horseName );
+    }
+
+    // abstract useSkill实现
+    public void useSkill(){
+        System.out.println(super.proName + " use skill " + iniSkill);
+    }
+
+    // 初始化专精
+    private Object iniSpecialization( int typeNum ){
+
+        if( typeNum == 0 ){
+            this.iniSkill = "Mortal Strike!";
+            return "Arms";
+        }
+        else if( typeNum == 1){
+            this.iniSkill = "Bloodthirsty!";
+            return "Rage";
+        }
+        else{
+            this.iniSkill = "Shield Rush!";
+            return "Defense";
         }
 
     }
 
 }
 
+// 角色
+class Player{
+
+    Race race;
+    Profession profession;
+    private String name;
+    private int raceCode, professionCode;
+    Player( String name, int raceCode, int professionCode ){
+        this.name = name;
+        this.professionCode =  professionCode;
+        this.raceCode = raceCode;
+        this.race = this.creatRace();
+        this.profession = this.creatProfession();
+    }
+
+    private Race creatRace(){
+        if(this.raceCode == 0){
+            return new RaceHuman();
+        } else{
+            return new RaceUndead();
+        }
+    }
+
+    private Profession creatProfession(){
+        if(this.raceCode == 0){
+            return new Magic(this.name, this.professionCode);
+        } else{
+            return new Warrior(this.name, this.professionCode);
+        }
+    }
+
+}
+
+
 public class Modifier {
     public static void main(String[] args) {
-        Undead peter = new Undead("peter", 0);
-        peter.profession.getHorse();
-        peter.profession.useSkill();
+        Player peter = new Player("peter", 0, 0);
+        Player mike = new Player("mike", 1, 2);
 
-        Undead mike = new Undead("mike", 1);
-        mike.profession.getHorse();
+        peter.profession.useSkill();
+        peter.profession.getHorse();
+        peter.race.useRaceSkill();
+
         mike.profession.useSkill();
+        mike.profession.getHorse();
+        mike.race.useRaceSkill();
     }
 }
