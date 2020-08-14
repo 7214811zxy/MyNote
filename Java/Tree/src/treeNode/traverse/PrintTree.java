@@ -1,5 +1,12 @@
+/**
+ *
+ * 练习 树结构的定义和树的遍历
+ *
+ * */
+
 package treeNode.traverse;
 
+// 定义一个树类
 class TreeNode {
     int val;
     TreeNode left;
@@ -19,11 +26,12 @@ public class PrintTree {
         recursive(root);
     }
 
-    // 创建一个底层结点(这个叫啥来着)
+    // 创建一个底层结点
     private static TreeNode getBottomNode(int val){
         return new TreeNode(val, null, null);
     }
 
+    // 创建一颗树
     private static TreeNode creatTree(){
 
         // layer 3
@@ -36,6 +44,7 @@ public class PrintTree {
         return root;
     }
 
+    // 递归遍历树并打印所有节点的值
     public static void recursive(TreeNode node){
 
         int val = node.val;

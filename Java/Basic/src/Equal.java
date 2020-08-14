@@ -1,3 +1,10 @@
+/**
+ * .equal和 == 的区别和本质
+ * 了解了.equal和==之间的主要区别；了解了Java String Pool
+ *
+ * */
+
+
 public final class Equal
 {
     public static void main( String args[] )

@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 class JsArray<T>{
 
-    T[] array;
+    private T[] array;
     int length;
 
     JsArray(T[] array){
@@ -102,17 +102,25 @@ class JsArray<T>{
 public class Array {
     public static void main(String[] args) {
 
-        // 1. 声明一个动态数组
-        JsArray<Integer> testArray = new JsArray<Integer>( new Integer[] {1, 2, 3} );
-        testArray.print(); // [1, 2, 3]
+        // 声明动态数组
+        JsArray<Integer> intArray = new JsArray<Integer>( new Integer[] {1, 2, 3} );
+        JsArray<String> stringArray = new JsArray<String>( new String[] {"apple", "banana", "peach"} );
+        intArray.print(); // [1, 2, 3]
+        stringArray.print(); // [apple, banana, peach]
 
         // 向数组中添加元素
-        testArray.push( new Integer[] {4, 5, 6} );
-        testArray.print(); // [1, 2, 3, 4, 5, 6]
+        intArray.push( new Integer[] {4, 5, 6} );
+        intArray.print(); // [1, 2, 3, 4, 5, 6]
+
+        stringArray.push( new String[] {"meat", "beef"} );
+        stringArray.print(); // [apple, banana, peach, meat, beef]
 
         // 数组的切割
-        testArray.split(2).print(); // [3, 4, 5, 6]
-        testArray.split(1, 4).print(); // [2, 3, 4, 5]
+        intArray.split(2).print(); // [3, 4, 5, 6]
+        intArray.split(1, 4).print(); // [2, 3, 4, 5]
+
+        stringArray.split(3).print(); // [meat, beef]
+        stringArray.split(0, 3).print(); // [apple, banana, peach, meat]
 
     }
 }

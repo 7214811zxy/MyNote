@@ -1,4 +1,20 @@
-// 种族abstract
+/**
+ * 修饰符、抽象类综合练习
+ * 类功能：
+ * 对游戏的逻辑进行了一些简单模拟，实现了如下功能
+ *
+ *      创建一个名字为peter的人类冰系法师并使用种族技能冰箭，召唤职业坐骑
+ *      Player peter = new Player("peter", 0, 0);
+ *      peter.profession.getHorse();
+ *
+ *      创建一个名字为mike的亡灵火系法师并使用职业技能火球，使用种族技能
+ *      Player mike = new Player("mike", 0, 1);
+ *      mike.profession.useSkill();
+ *      mike.race.useRaceSkill()
+ *
+ * */
+
+// Race abstract
 abstract class Race{
 
     String raceName;
@@ -9,7 +25,7 @@ abstract class Race{
     // 种族技能
     abstract void useRaceSkill();
 }
-// 种族 —— 亡灵
+// Race —— undead
 class RaceUndead extends Race{
 
     static String skill;
@@ -29,7 +45,7 @@ class RaceUndead extends Race{
         System.out.println( raceName + "use race skill " + skill );
     }
 }
-// 种族 —— 人类
+// Race —— human
 class RaceHuman extends Race{
 
     static String skill;
@@ -50,7 +66,7 @@ class RaceHuman extends Race{
     }
 }
 
-// 职业abstract
+// Pro abstract
 abstract class Profession{
     String proName;
     Profession(String proName){
@@ -59,7 +75,7 @@ abstract class Profession{
     public abstract void getHorse();
     public abstract void useSkill();
 }
-// 职业 —— 法师
+// pro —— magic
 class Magic extends Profession{
 
     Object specialization;
@@ -105,7 +121,7 @@ class Magic extends Profession{
     }
 
 }
-// 职业 —— 战士
+// pro —— warrior
 class Warrior extends Profession{
 
     private Object specialization;
@@ -152,7 +168,7 @@ class Warrior extends Profession{
 
 }
 
-// 角色
+// play
 class Player{
 
     Race race;
@@ -188,13 +204,19 @@ class Player{
 
 public class Modifier {
     public static void main(String[] args) {
+
+        // 创建一个名字为peter的人类冰霜系法师
         Player peter = new Player("peter", 0, 0);
+
+        // 创建一个名字为mike的亡灵防御系战士
         Player mike = new Player("mike", 1, 2);
 
+        // peter法师使用了一堆冰法的技能
         peter.profession.useSkill();
         peter.profession.getHorse();
         peter.race.useRaceSkill();
 
+        // mike使用了一堆防战的技能
         mike.profession.useSkill();
         mike.profession.getHorse();
         mike.race.useRaceSkill();
