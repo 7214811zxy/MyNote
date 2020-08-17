@@ -516,7 +516,39 @@ Integet in = 1;
 in = in + 2;
 ```
 
+## IDEA的DeBug工具
 
+
+
+**Step into**:
+
+ Steps into the method to show what happens inside it. Use this option when you are not sure the method is returning a correct result.
+
+进入函数看看发生了啥。如果你不确定这个函数会返回啥，你可以使用这个操作。
+
+
+
+**Step over**
+
+Steps over the current line of code and takes you to the next line even if the highlighted line has method calls in it. The implementation of the methods is skipped, and you move straight to the next line of the caller method.
+
+介数当前这行代码，进入下一行。如果这一行是一个`method`，那么会直接执行完这个`method`
+
+
+
+**Step out**
+
+Steps out of the current method and takes you to the caller method.
+
+当你使用step into进入一个方法后，可以直接使用step out直接执行完这个方法，回到caller method中。
+
+
+
+**Run to cursor**
+
+Continues the execution until the position of the caret is reached.
+
+如果一个函数很长很长很长，那你又想看其中的某一段函数，假设你使用**step into**方法你要按很久很久很久，现在你可以使用**Run to cursor**直接跳到鼠标指向的那一步
 
 
 

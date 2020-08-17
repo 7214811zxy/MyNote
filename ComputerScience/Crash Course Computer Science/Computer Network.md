@@ -136,3 +136,51 @@ UDP里还有一个东西叫做`checksum`用于检查数据是否正确。但这�
 
 这是Open System Interconnection (OSI) model的底下5层，再往上是表示层和应用程序层，就是浏览器，Skype和HTML存在地方。下次再讲，翻译不动了.... :dizzy_face:
 
+# Computer Networks 3
+
+这个post我们来聊聊 World Wide Web —— 万维网。首先这个东西不等于互联网！不等于互联网！不等于互联网！重要的事情说3遍！它位于互联网的上一层。他们的关系是这样的：
+
+> The Internet is the underlying plumbing that conveys the data for all these different applications. And the World Wide Web is the biggest of them all. We use web browser access World Wide Web. 
+
+万维网的最基本单位，是单个页面。没错！就是你印象里的那些页面，这些页面有一些超链接，指向其他页面。在互联网中使用IP来确定电脑的位置；在万维网中使用URL来确定位置。
+
+超链接还有个称呼，也许你听说过，`Hypertext —— 超文本`。为了使网页能相互连接，每个网页需要一个唯一的地址，这就引出了`Uniform Resource Locator —— 统一资源定位器 URL`
+
+
+
+这里我们来简单聊一聊一个完成的网络请求的流程
+
+首先你输入一个网址比如是www.thecrashcourse.com，这个网址会通过Internet传递给DNS服务器，进行域名的解析
+
+![image-20200815093836470](C:\Users\Jupyter\AppData\Roaming\Typora\typora-user-images\image-20200815093836470.png)
+
+然后dns从服务器中查找出域名所对应的ip后，返回给你的计算机
+
+![image-20200815093942790](C:\Users\Jupyter\AppData\Roaming\Typora\typora-user-images\image-20200815093942790.png)
+
+浏览器拿到这个IP后会打开一个TCP请求连接到这个IP，也就是传说中的Web Server
+
+![image-20200815094041918](C:\Users\Jupyter\AppData\Roaming\Typora\typora-user-images\image-20200815094041918.png)
+
+那么现在你已经连接到了www.thecrashcourse.com这个webServer上了，那么你要怎么告诉web Server你要干嘛呢？这里就要引出我们的`Http`了，即`Hypertext Transfer Protocol —— 超文本传输协议` 我们上面在讲超链接的时候说过它的还有个名字就是超文本，希望你没有忘  :crying_cat_face:
+
+Http最开始的时候，只有一个指令，就是 Get！比如我们连接了webserver后，我们想要获取courese界面，我们可以发送`GET /courses`这个指令以ASCII编码发送到服务器(什么是ASCII编码？？右转Google)。服务器返回一个地址，浏览器渲染页面。之后Http还添加了状态吗，它放在请求前面，例如200就表示页面找到了！400~499表示客户端出错。常见的404表示页面找不到
+
+
+
+下面我们来聊一聊超文本的传输。超文本，本质上还是一种文本，在传输的时候就是一种字符串，那我们要怎么区分哪些是超文本，哪些是普通文本呢？这就出现了下一位兄弟 `Hypertext Markup Language —— 超文本标记语言 HTML`
+
+至于怎么写`HTML`,想学吗？我教你啊 :full_moon_with_face: 现在的`html5`就是`html`的最新版，它有100多种标签，而最开始的时候，`html`只有18种标签。当然现在还加入了Javascript和css，这个就不谈了。有兴趣的可以去学习 前端从入门到外卖
+
+
+
+下面来聊聊浏览器
+
+浏览器主要的工作是和网页服务器沟通，并负责显示一些东西。第一个浏览器和网页服务器是Tim Berners-Lee在1990年花了2个月时间完成的。为了做这个玩意儿，它还同时定了几个标准 URL HTML和HTTP :dizzy_face: 巨佬！然后他和同事使用了一段时间后，就把这个玩意儿在1991年发布了出去，没错！万维网就此诞生了。
+
+
+
+因为Lee定义的万维网开放协议，浏览器犹如雨后春笋般的出现了。那么这就又带来一个问题，我要怎么在万维网上找我想要的信息呢？哈! 问的好~那就出现了搜索引擎，这个故事就比较大了，有机会我们下次再聊 bye bye~
+
+
+
