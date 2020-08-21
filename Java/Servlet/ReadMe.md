@@ -33,3 +33,32 @@ run => Edit Configurations => 修改 Server中的URL 和 Deployment 中的 Appli
 
 ## 关于tomcat的断点调试
 断点后使用DeBug模式进行调试
+
+## 关于GenericServlet和HttpServlet
+这两个方法是对Servlet接口的抽象类实现，对Servlet进行了进一步的封装。层级关系如下
+Servlet
+   |
+ GenericServlet
+        |
+     HttpServlet
+     
+## 关于Http请求
+对于get请求，主要通过getQueryString()来获取查询字符串
+对于post请求，可以通过getReader()来获取字符输入流，通过getInputStream()获取字节流输入流
+
+servlet提供了获取请求参数的通用方法，兼容get和post：
+String getParameter(String name) 根据参数名称获取参数值
+String[] getParameterValues(String name) 根据参数名称获取所有的参数值组成的数组
+Enumeration<String> getParameterNames() 获取所有请求参数的名称
+Map<String, String[]> getParameterMap() 获取所有参数的map集合
+
+利用getParameter(String name) 可以实现doGet()和doPost()方法的合并
+
+## 案例
+需求介绍：
+    1. 编写login.html登陆页面；具有username & password两个输入框
+    2. 使用Druid数据库连接池技术，操作mysql中的表
+    3. 使用jdbcTemplate技术封装JDBC
+    4. 登陆成功跳转到SuccessServlet展示：登陆成功！
+    5. 登陆失败跳转到FailServlet展示：登录失败
+

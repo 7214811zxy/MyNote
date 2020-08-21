@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SpringIOC" />
+        <module name="SpringAOP" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Maven" target="1.5" />
+      <module name="SpringAOP" target="1.5" />
+      <module name="SpringIOC" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

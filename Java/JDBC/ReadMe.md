@@ -31,3 +31,19 @@
 
 5. PreparedStatement: 执行sql的对象
 
+# Druid连接池的使用
+
+为什么要使用连接池
+    快！方便！
+    
+1. 环境配置https://www.bilibili.com/video/BV1uJ411k7wy?p=562
+    导入jar包 druid-1.0.9.jar
+    定义配置文件 (在libs/druid.properties中)
+    获取连接池对象
+2. Druid的HelloWorld -> DruidDemo
+    会向本地MySQL iknow数据库中的jdbc表中加入一条数据
+
+# Spring JDBC
+为什么要使用Spring？都说了是Spring了....
+
+       
