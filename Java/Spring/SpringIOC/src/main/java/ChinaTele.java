@@ -1,3 +1,6 @@
+import org.springframework.stereotype.Component;
+
+@Component("simChinaTele")
 public class ChinaTele implements Sim{
 
     private String phoneNumber;

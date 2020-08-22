@@ -38,4 +38,11 @@
         <constructor-arg name="userName" value="PeterZhu"></constructor-arg>
     </bean>
 
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/iknow"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="1993315zxy"></property>
+    </bean>
+
 </beans>
