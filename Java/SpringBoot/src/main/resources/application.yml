@@ -1,0 +1,21 @@
+# 该文件用来修改springBoot的一些默认值
+server:
+  port: 80
+
+# 存放对象1
+studentObj1:
+  name: peter
+  age: 3
+
+# 存放对象2
+studentObj2: {name: peter, age: 3}
+
+# 存放数组1
+petArray1:
+  - cat
+  - dog
+  - pih
+  -
+
+# 存放数组2
+petArray2: [cat, dog, pig]

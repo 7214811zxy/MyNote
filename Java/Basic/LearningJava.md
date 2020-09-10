@@ -155,18 +155,18 @@ boolean r3 = a == sameA;  // This is true, since a and sameA are really the same
 ~~~
 
 ```java
-class Test{
+class AppTest{
     String text;
-    Test(String test){
+    AppTest(String test){
         this.text = test;
     }
 }
 
 public class Equal2 {
     public static void main(String[] args) {
-        Test a = new Test("apple");
-        Test a1 = new Test("apple");
-        Test b = new Test("peach");
+        AppTest a = new AppTest("apple");
+        AppTest a1 = new AppTest("apple");
+        AppTest b = new AppTest("peach");
 
         System.out.println(a.text); //apple
         System.out.println(a1.text); //apple
@@ -180,18 +180,18 @@ public class Equal2 {
 ```
 
 ```java
-class Test{
+class AppTest{
     static String text;
-    Test(String test){
+    AppTest(String test){
         this.text = test;
     }
 }
 
 public class Equal2 {
     public static void main(String[] args) {
-        Test a = new Test("apple");
-        Test a1 = new Test("apple");
-        Test b = new Test("peach");
+        AppTest a = new AppTest("apple");
+        AppTest a1 = new AppTest("apple");
+        AppTest b = new AppTest("peach");
 
         System.out.println(a.text); //peach
         System.out.println(a1.text); //peach
@@ -552,9 +552,9 @@ Continues the execution until the position of the caret is reached.
 
 
 
+Peter 2020 9 10
 
 
 
-
-
+ 
 

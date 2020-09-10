@@ -7,6 +7,11 @@
         <option value="$PROJECT_DIR$/SpringAOP/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringIOC/pom.xml" />
         <option value="$PROJECT_DIR$/Spring/SpringAOP/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringJDBC/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringTX/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringBootDB/pom.xml" />
       </list>
     </option>
   </component>

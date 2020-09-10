@@ -6,7 +6,12 @@
       <module fileurl="file://$PROJECT_DIR$/JDBC/JDBC.iml" filepath="$PROJECT_DIR$/JDBC/JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringAOP/SpringAOP.iml" filepath="$PROJECT_DIR$/Spring/SpringAOP/SpringAOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBoot.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootDB/SpringBootDB.iml" filepath="$PROJECT_DIR$/SpringBootDB/SpringBootDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring/SpringIOC/SpringIOC.iml" filepath="$PROJECT_DIR$/Spring/SpringIOC/SpringIOC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTX/SpringTX.iml" filepath="$PROJECT_DIR$/SpringTX/SpringTX.iml" />
       <module fileurl="file://$PROJECT_DIR$/Tree/Tree.iml" filepath="$PROJECT_DIR$/Tree/Tree.iml" />
     </modules>
   </component>
