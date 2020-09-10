@@ -35,6 +35,7 @@ public class JDBCHelloWorld {
             System.out.println(count);
 
             // 8. 释放资源
+			// 9. Peter 2020 9 10
             stmt.close();
             conn.close();
 
