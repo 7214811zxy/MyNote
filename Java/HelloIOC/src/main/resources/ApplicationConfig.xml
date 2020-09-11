@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING/DTD BEAN/EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!--这是吃橘子的Bean -->
+    <bean id="eatOrange" class="EatOrange"></bean>
+    <!--这是吃苹果的Bean -->
+    <bean id="eatApple" class="EatApple"></bean>
+    <bean id="person123" class="Person">
+        <!-- 这里我们注入的是吃橘子的bean-->
+        <property name="eat" ref="eatOrange"/>
+    </bean>
+</beans>

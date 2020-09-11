@@ -9,6 +9,7 @@
         <module name="SpringBoot" />
         <module name="SpringTX" />
         <module name="SpringMVC" />
+        <module name="PeterIOC" />
         <module name="SpringJDBC" />
         <module name="SpringBootDB" />
         <module name="SpringAOP" />
@@ -16,6 +17,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="PeterIOC" target="8" />
       <module name="SpringAOP" target="1.5" />
       <module name="SpringBoot" target="1.8" />
       <module name="SpringBootDB" target="1.8" />
