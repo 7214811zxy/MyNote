@@ -16,9 +16,11 @@
         <module name="SpringAOP" />
         <module name="ResultArray" />
         <module name="SpringIOC" />
+        <module name="DataFlow" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="DataFlow" target="1.5" />
       <module name="PeterIOC" target="8" />
       <module name="ResultArray" target="1.5" />
       <module name="SpringAOP" target="1.5" />
